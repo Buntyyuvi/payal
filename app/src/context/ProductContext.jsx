@@ -33,12 +33,18 @@ export const ProductProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
+  const authHeader = () => {
+    const token = localStorage.getItem('adminToken');
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+    return headers;
+  };
+
   const addProduct = async (newProduct) => {
     try {
       const response = await fetch(API_URL, {
         method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeader(),
         body: JSON.stringify(newProduct)
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -53,8 +59,7 @@ export const ProductProvider = ({ children }) => {
     try {
       const response = await fetch(`${API_URL}/${id}`, {
         method: 'PUT',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeader(),
         body: JSON.stringify(updatedProduct)
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -67,7 +72,7 @@ export const ProductProvider = ({ children }) => {
 
   const deleteProduct = async (id) => {
     try {
-      const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE', credentials: 'include' });
+      const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE', headers: authHeader() });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       setProducts(prev => Array.isArray(prev) ? prev.filter(p => p.id !== id) : []);
     } catch (error) {

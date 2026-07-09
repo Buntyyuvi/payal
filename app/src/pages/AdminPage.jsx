@@ -30,7 +30,7 @@ export default function AdminPage() {
     const headers = {};
     if (token) headers['Authorization'] = `Bearer ${token}`;
 
-    fetch(API_URL, { credentials: 'include', headers })
+    fetch(API_URL, { headers })
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
@@ -61,7 +61,6 @@ export default function AdminPage() {
 
       await fetch(`${API_URL}/${id}`, {
         method: 'DELETE',
-        credentials: 'include',
         headers
       });
       fetchOrders();

@@ -17,7 +17,6 @@ export default function AdminLogin() {
     try {
       const res = await fetch('https://flower-backend-eight.vercel.app/api/admin/login', {
         method: 'POST',
-        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });

@@ -18,7 +18,7 @@ export default function ShopPage() {
   return (
     <div className="max-w-7xl mx-auto px-8 py-12">
       {/* Header */}
-      <div className="bg-white rounded-[3rem] p-12 mb-16 shadow-sm border border-slate-50">
+      <div className="bg-white rounded-[3rem] p-12 mb-16 shadow-sm border border-pink-50">
         <div className="inline-flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full mb-6">
           <Heart className="w-4 h-4 text-pink-500" />
           <span className="text-sm text-pink-600 font-medium">Handmade with love</span>
@@ -44,8 +44,8 @@ export default function ShopPage() {
             
             <div className="grid grid-cols-4 gap-8">
               {catProducts.map((product, pIdx) => (
-                <div key={product.id || pIdx} className="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-50 group hover:shadow-xl transition-all flex flex-col h-full">
-                  <div className="relative aspect-square rounded-[1.5rem] overflow-hidden mb-6 bg-slate-100 flex-shrink-0">
+                <div key={product.id || pIdx} className="bg-white p-4 rounded-[2rem] shadow-sm border border-pink-50 group hover:shadow-xl transition-all flex flex-col h-full">
+                  <div className="relative aspect-square rounded-[1.5rem] overflow-hidden mb-6 bg-pink-100 flex-shrink-0">
                     <img src={product.img} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="text-left px-2 flex-grow flex flex-col justify-between">

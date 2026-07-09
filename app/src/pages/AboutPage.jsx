@@ -10,7 +10,7 @@ const IMAGES = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-pink-50">
       <div className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0">
           <img src={IMAGES[1]} alt="" className="w-full h-full object-cover" />
@@ -24,7 +24,7 @@ export default function AboutPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 -mt-20 relative z-10">
-        <div className="bg-white rounded-[3rem] p-12 shadow-xl border border-slate-100 mb-12">
+        <div className="bg-white rounded-[3rem] p-12 shadow-xl border border-pink-100 mb-12">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-1/2">
               <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-pink-200 shadow-lg mx-auto">
@@ -54,7 +54,7 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-[2rem] p-10 shadow-sm border border-slate-50 flex flex-col justify-center">
+          <div className="bg-white rounded-[2rem] p-10 shadow-sm border border-pink-50 flex flex-col justify-center">
             <Quote className="w-8 h-8 text-pink-300 mb-4" />
             <p className="text-slate-600 text-lg leading-relaxed italic mb-6">
               "I believe flowers are nature's way of smiling at us. Each bouquet I create
@@ -68,32 +68,32 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-[3rem] p-12 shadow-sm border border-slate-50 mb-12">
+        <div className="bg-white rounded-[3rem] p-12 shadow-sm border border-pink-50 mb-12">
           <p className="text-pink-500 font-bold text-xs tracking-widest uppercase mb-2 text-center">Why Choose Us</p>
           <h2 className="text-3xl font-bold text-center text-slate-800 mb-10">Made with love,<br />made just for you</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-slate-50 rounded-3xl p-6 text-center hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 text-center hover:bg-pink-100/50 transition-colors">
               <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="w-6 h-6 text-pink-500" />
               </div>
               <h3 className="font-bold text-slate-800 mb-2">Unique Designs</h3>
               <p className="text-slate-400 text-sm">Every bouquet is one-of-a-kind</p>
             </div>
-            <div className="bg-slate-50 rounded-3xl p-6 text-center hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 text-center hover:bg-pink-100/50 transition-colors">
               <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-6 h-6 text-pink-500" />
               </div>
               <h3 className="font-bold text-slate-800 mb-2">Handmade</h3>
               <p className="text-slate-400 text-sm">Crafted with love and care</p>
             </div>
-            <div className="bg-slate-50 rounded-3xl p-6 text-center hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 text-center hover:bg-pink-100/50 transition-colors">
               <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-4">
                 <Gift className="w-6 h-6 text-pink-500" />
               </div>
               <h3 className="font-bold text-slate-800 mb-2">Perfect Gift</h3>
               <p className="text-slate-400 text-sm">Ideal for every occasion</p>
             </div>
-            <div className="bg-slate-50 rounded-3xl p-6 text-center hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 text-center hover:bg-pink-100/50 transition-colors">
               <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-6 h-6 text-pink-500" />
               </div>

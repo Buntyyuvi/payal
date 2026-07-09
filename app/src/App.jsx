@@ -23,7 +23,7 @@ export default function App() {
     <ProductProvider>
       <CartProvider>
       <Router>
-        <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-pink-200 flex flex-col">
+        <div className="min-h-screen bg-pink-50 font-sans text-slate-800 selection:bg-pink-200 flex flex-col">
           <Routes>
             {/* Admin Login - standalone layout */}
             <Route path="/admin-login" element={<AdminLogin />} />

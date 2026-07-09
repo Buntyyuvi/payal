@@ -39,7 +39,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-8 py-12 flex items-center gap-12 bg-white rounded-[3rem] my-8 shadow-sm border border-pink-50 relative overflow-hidden">
         <div className="w-1/2 z-10 pl-8">
-          <div className="inline-flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-pink-100 px-4 py-2 rounded-full mb-8">
             <Heart className="w-4 h-4 text-pink-500" />
             <span className="text-sm text-slate-600 font-medium">Handmade with love</span>
           </div>
@@ -65,7 +65,7 @@ export default function LandingPage() {
           </div>
 
           <div className="flex items-center gap-4 mt-8 bg-white shadow-lg shadow-pink-100/50 p-4 rounded-2xl w-fit">
-            <div className="flex items-center gap-3 pr-6 border-r border-slate-100">
+            <div className="flex items-center gap-3 pr-6 border-r border-pink-100">
               <div className="bg-pink-50 p-2 rounded-full text-pink-500">
                 <Heart className="w-5 h-5" />
               </div>
@@ -74,7 +74,7 @@ export default function LandingPage() {
                 <p className="text-slate-400 text-xs">with love</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 px-6 border-r border-slate-100">
+            <div className="flex items-center gap-3 px-6 border-r border-pink-100">
               <div className="bg-pink-50 p-2 rounded-full text-pink-500">
                 <ThumbsUp className="w-5 h-5" />
               </div>
@@ -121,7 +121,7 @@ export default function LandingPage() {
           { icon: <ShieldCheck className="w-6 h-6" />, title: "Secure payment", subtitle: "100% secure checkout" },
           { icon: <Headset className="w-6 h-6" />, title: "Customer support", subtitle: "We're here to help" },
         ].map((feature, idx) => (
-          <div key={idx} className="flex-1 bg-white p-6 rounded-3xl flex items-center gap-4 shadow-sm border border-slate-50 hover:shadow-md transition-shadow">
+          <div key={idx} className="flex-1 bg-white p-6 rounded-3xl flex items-center gap-4 shadow-sm border border-pink-50 hover:shadow-md transition-shadow">
             <div className="bg-pink-50 text-pink-500 p-3 rounded-2xl">
               {feature.icon}
             </div>
@@ -150,7 +150,7 @@ export default function LandingPage() {
             const fullProduct = findProduct(item.title);
             const inCart = fullProduct && isInCart(fullProduct.id);
             return (
-            <div key={idx} className="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-50 group hover:shadow-xl transition-all">
+            <div key={idx} className="bg-white p-4 rounded-[2rem] shadow-sm border border-pink-50 group hover:shadow-xl transition-all">
               <div className="relative aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6">
                 <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
@@ -177,7 +177,7 @@ export default function LandingPage() {
       {/* About Us & Why Choose Us Section */}
       <div className="max-w-7xl mx-auto px-8 mb-20 flex gap-8">
         {/* About Us */}
-        <div className="w-1/2 bg-white rounded-[3rem] p-10 flex gap-8 shadow-sm border border-slate-50">
+        <div className="w-1/2 bg-white rounded-[3rem] p-10 flex gap-8 shadow-sm border border-pink-50">
           <div className="w-1/2 h-[400px] rounded-[2rem] overflow-hidden">
             <img src={IMAGES[7]} alt="About Us" className="w-full h-full object-cover" />
           </div>
@@ -195,31 +195,31 @@ export default function LandingPage() {
         </div>
 
         {/* Why Choose Us */}
-        <div className="w-1/2 bg-white rounded-[3rem] p-10 shadow-sm border border-slate-50">
+        <div className="w-1/2 bg-white rounded-[3rem] p-10 shadow-sm border border-pink-50">
           <p className="text-pink-500 font-bold text-xs tracking-widest uppercase mb-8">Why Choose Us?</p>
           <div className="grid grid-cols-2 gap-6 h-[80%]">
-            <div className="bg-slate-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
               <div className="flex items-center gap-2 text-pink-500 font-bold text-sm mb-1">
                 <Sparkles className="w-4 h-4" />
                 Unique & cute
               </div>
               <p className="text-slate-400 text-xs leading-relaxed">Adorable designs you'll love</p>
             </div>
-            <div className="bg-slate-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
               <div className="flex items-center gap-2 text-pink-500 font-bold text-sm mb-1">
                 <Heart className="w-4 h-4" />
                 Handmade
               </div>
               <p className="text-slate-400 text-xs leading-relaxed">Each bouquet is made with love</p>
             </div>
-            <div className="bg-slate-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
               <div className="flex items-center gap-2 text-pink-500 font-bold text-sm mb-1">
                 <Gift className="w-4 h-4" />
                 Perfect gift
               </div>
               <p className="text-slate-400 text-xs leading-relaxed">Ideal for birthdays & more</p>
             </div>
-            <div className="bg-slate-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
+            <div className="bg-pink-50 rounded-3xl p-6 flex flex-col justify-center gap-2 hover:bg-pink-50/50 transition-colors">
               <div className="flex items-center gap-2 text-pink-500 font-bold text-sm mb-1">
                 <Clock className="w-4 h-4" />
                 Long lasting

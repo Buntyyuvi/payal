@@ -146,8 +146,8 @@ export default function AdminPage() {
   const formatPrice = (num) => '₹' + Number(num).toLocaleString();
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
-      <div className="bg-white border-b border-slate-100 px-8 py-2 flex justify-between items-center text-xs text-slate-500">
+    <div className="min-h-screen bg-pink-50 font-sans text-slate-800">
+      <div className="bg-white border-b border-pink-100 px-8 py-2 flex justify-between items-center text-xs text-slate-500">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-pink-500"></div>
           Admin access for Pretty Flowers Studio
@@ -161,8 +161,8 @@ export default function AdminPage() {
 
       <nav className="bg-white px-8 py-4 flex items-center justify-between shadow-sm sticky top-0 z-40">
         <div className="flex gap-2">
-          <button onClick={() => setActiveTab('products')} className={`px-4 py-2 rounded-full text-sm flex items-center gap-2 font-medium border transition-all ${activeTab === 'products' ? 'bg-slate-100 text-slate-800 border-slate-200' : 'text-slate-500 hover:bg-slate-50 border-transparent hover:border-slate-200'}`}><Package className="w-4 h-4" /> Products</button>
-          <button onClick={() => setActiveTab('orders')} className={`px-4 py-2 rounded-full text-sm flex items-center gap-2 font-medium border transition-all ${activeTab === 'orders' ? 'bg-slate-100 text-slate-800 border-slate-200' : 'text-slate-500 hover:bg-slate-50 border-transparent hover:border-slate-200'}`}><ClipboardList className="w-4 h-4" /> Orders</button>
+          <button onClick={() => setActiveTab('products')} className={`px-4 py-2 rounded-full text-sm flex items-center gap-2 font-medium border transition-all ${activeTab === 'products' ? 'bg-pink-100 text-slate-800 border-pink-200' : 'text-slate-500 hover:bg-pink-50 border-transparent hover:border-pink-200'}`}><Package className="w-4 h-4" /> Products</button>
+          <button onClick={() => setActiveTab('orders')} className={`px-4 py-2 rounded-full text-sm flex items-center gap-2 font-medium border transition-all ${activeTab === 'orders' ? 'bg-pink-100 text-slate-800 border-pink-200' : 'text-slate-500 hover:bg-pink-50 border-transparent hover:border-pink-200'}`}><ClipboardList className="w-4 h-4" /> Orders</button>
         </div>
         <Link to="/" className="text-center">
           <h1 className="text-xl font-bold tracking-widest text-slate-800 leading-none">PRETTY FLOWERS</h1>
@@ -187,7 +187,7 @@ export default function AdminPage() {
             </div>
 
             <div className="grid grid-cols-4 gap-6 mb-10">
-              <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+              <div className="bg-white p-6 rounded-3xl shadow-sm border border-pink-100 flex flex-col justify-between">
                 <div className="flex justify-between items-start mb-4">
                   <div className="bg-pink-50 p-2 rounded-full text-pink-500"><Package className="w-5 h-5" /></div>
                   <TrendingUp className="w-4 h-4 text-pink-500" />
@@ -197,7 +197,7 @@ export default function AdminPage() {
                   <p className="text-slate-400 text-sm">Total Products</p>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+              <div className="bg-white p-6 rounded-3xl shadow-sm border border-pink-100 flex flex-col justify-between">
                 <div className="flex justify-between items-start mb-4">
                   <div className="bg-pink-50 p-2 rounded-full text-pink-500"><ShoppingCart className="w-5 h-5" /></div>
                   <TrendingUp className="w-4 h-4 text-pink-500" />
@@ -207,7 +207,7 @@ export default function AdminPage() {
                   <p className="text-slate-400 text-sm">Total Orders</p>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+              <div className="bg-white p-6 rounded-3xl shadow-sm border border-pink-100 flex flex-col justify-between">
                 <div className="flex justify-between items-start mb-4">
                   <div className="bg-pink-50 p-2 rounded-full text-pink-500"><AlertTriangle className="w-5 h-5" /></div>
                   <div className="w-2 h-2 rounded-full bg-pink-500"></div>
@@ -217,7 +217,7 @@ export default function AdminPage() {
                   <p className="text-slate-400 text-sm">Low Stock Items</p>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+              <div className="bg-white p-6 rounded-3xl shadow-sm border border-pink-100 flex flex-col justify-between">
                 <div className="flex justify-between items-start mb-4">
                   <div className="bg-pink-50 p-2 rounded-full text-pink-500"><IndianRupee className="w-5 h-5" /></div>
                   <TrendingUp className="w-4 h-4 text-pink-500" />
@@ -229,8 +229,8 @@ export default function AdminPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden">
-              <div className="p-6 border-b border-slate-100 flex gap-4 items-center">
+            <div className="bg-white rounded-[2rem] shadow-sm border border-pink-100 overflow-hidden">
+              <div className="p-6 border-b border-pink-100 flex gap-4 items-center">
                 <div className="relative flex-grow">
                   <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
                   <input type="text" placeholder="Search products by name or category" value={productSearchInput} onChange={e => setProductSearchInput(e.target.value)} onKeyDown={handleProductKeyDown} className="w-full pl-10 pr-4 py-3 rounded-full border border-slate-200 text-sm focus:outline-none focus:border-pink-300" />
@@ -240,7 +240,7 @@ export default function AdminPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
+                    <tr className="bg-pink-50 text-slate-500 text-xs uppercase tracking-wider">
                       <th className="py-4 px-6 font-medium">Image</th>
                       <th className="py-4 px-6 font-medium">Product Name</th>
                       <th className="py-4 px-6 font-medium">Category</th>
@@ -250,15 +250,15 @@ export default function AdminPage() {
                       <th className="py-4 px-6 font-medium">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100">
+                  <tbody className="divide-y divide-pink-100">
                     {filteredProducts.length === 0 ? (
                       <tr>
                         <td colSpan={7} className="py-16 text-center text-slate-400">No products found.</td>
                       </tr>
                     ) : filteredProducts.map((product) => (
-                      <tr key={product.id} className="hover:bg-slate-50/50 transition-colors">
+                      <tr key={product.id} className="hover:bg-pink-50/50 transition-colors">
                         <td className="py-4 px-6">
-                          <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-100">
+                          <div className="w-12 h-12 rounded-xl overflow-hidden bg-pink-100">
                             <img src={product.img} alt={product.title} className="w-full h-full object-cover" />
                           </div>
                         </td>
@@ -285,14 +285,14 @@ export default function AdminPage() {
                   </tbody>
                 </table>
               </div>
-              <div className="p-6 border-t border-slate-100 flex justify-between items-center text-sm text-slate-500">
+              <div className="p-6 border-t border-pink-100 flex justify-between items-center text-sm text-slate-500">
                 <p>Showing 1 to {filteredProducts.length} of {filteredProducts.length} products</p>
                 <div className="flex gap-2">
-                  <button className="px-4 py-2 hover:bg-slate-50 rounded-full font-medium">Previous</button>
+                  <button className="px-4 py-2 hover:bg-pink-50 rounded-full font-medium">Previous</button>
                   <button className="w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold">1</button>
-                  <button className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center font-bold text-slate-600">2</button>
-                  <button className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center font-bold text-slate-600">3</button>
-                  <button className="px-4 py-2 hover:bg-slate-50 rounded-full font-medium">Next</button>
+                  <button className="w-8 h-8 rounded-full hover:bg-pink-100 flex items-center justify-center font-bold text-slate-600">2</button>
+                  <button className="w-8 h-8 rounded-full hover:bg-pink-100 flex items-center justify-center font-bold text-slate-600">3</button>
+                  <button className="px-4 py-2 hover:bg-pink-50 rounded-full font-medium">Next</button>
                 </div>
               </div>
             </div>
@@ -307,8 +307,8 @@ export default function AdminPage() {
               <p className="text-slate-500 text-sm">View and manage customer orders placed through the storefront.</p>
             </div>
 
-            <div className="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden">
-              <div className="p-6 border-b border-slate-100 flex gap-4 items-center">
+            <div className="bg-white rounded-[2rem] shadow-sm border border-pink-100 overflow-hidden">
+              <div className="p-6 border-b border-pink-100 flex gap-4 items-center">
                 <div className="relative flex-grow">
                   <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
                   <input type="text" placeholder="Search orders by name or email..." value={orderSearchInput} onChange={e => setOrderSearchInput(e.target.value)} onKeyDown={handleOrderKeyDown} className="w-full pl-10 pr-4 py-3 rounded-full border border-slate-200 text-sm focus:outline-none focus:border-pink-300" />
@@ -318,7 +318,7 @@ export default function AdminPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
+                    <tr className="bg-pink-50 text-slate-500 text-xs uppercase tracking-wider">
                       <th className="py-4 px-6 font-medium">Order ID</th>
                       <th className="py-4 px-6 font-medium">Customer</th>
                       <th className="py-4 px-6 font-medium">Items</th>
@@ -328,14 +328,14 @@ export default function AdminPage() {
                       <th className="py-4 px-6 font-medium">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100">
+                  <tbody className="divide-y divide-pink-100">
                     {orders.length === 0 ? (
                       <tr>
                         <td colSpan={7} className="py-16 text-center text-slate-400">No orders yet.</td>
                       </tr>
                     ) : (
                       filteredOrders.map((order) => (
-                        <tr key={order.id} className="hover:bg-slate-50/50 transition-colors">
+                        <tr key={order.id} className="hover:bg-pink-50/50 transition-colors">
                           <td className="py-4 px-6 font-mono text-xs text-slate-500">#{order.id?.slice(-6).toUpperCase()}</td>
                           <td className="py-4 px-6">
                             <p className="font-bold text-slate-800 text-sm">{order.name}</p>
@@ -366,7 +366,7 @@ export default function AdminPage() {
             </div>
 
             {selectedOrder && (
-              <div className="mt-6 bg-white rounded-[2rem] shadow-sm border border-slate-100 p-8">
+              <div className="mt-6 bg-white rounded-[2rem] shadow-sm border border-pink-100 p-8">
                 <div className="flex justify-between items-center mb-6">
                   <div>
                     <h3 className="text-xl font-bold text-slate-800">Order #{selectedOrder.id?.slice(-6).toUpperCase()}</h3>
@@ -377,7 +377,7 @@ export default function AdminPage() {
                 <div className="grid grid-cols-2 gap-8 mb-8">
                   <div>
                     <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Customer Details</p>
-                    <div className="bg-slate-50 rounded-2xl p-5 space-y-2">
+                    <div className="bg-pink-50 rounded-2xl p-5 space-y-2">
                       <p className="text-sm"><span className="font-medium text-slate-600">Name:</span> {selectedOrder.name}</p>
                       <p className="text-sm"><span className="font-medium text-slate-600">Email:</span> {selectedOrder.email}</p>
                       <p className="text-sm"><span className="font-medium text-slate-600">Phone:</span> {selectedOrder.phone}</p>
@@ -386,7 +386,7 @@ export default function AdminPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Order Summary</p>
-                    <div className="bg-slate-50 rounded-2xl p-5 space-y-2">
+                    <div className="bg-pink-50 rounded-2xl p-5 space-y-2">
                       <p className="text-sm"><span className="font-medium text-slate-600">Items:</span> {selectedOrder.items?.length}</p>
                       <p className="text-sm"><span className="font-medium text-slate-600">Status:</span> {selectedOrder.status}</p>
                       <p className="text-lg font-bold text-pink-500 mt-2">{formatPrice(selectedOrder.total)}</p>
@@ -396,8 +396,8 @@ export default function AdminPage() {
                 <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Order Items</p>
                 <div className="space-y-3">
                   {selectedOrder.items?.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-4 bg-slate-50 rounded-2xl p-4">
-                      <div className="w-14 h-14 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0">
+                    <div key={idx} className="flex items-center gap-4 bg-pink-50 rounded-2xl p-4">
+                      <div className="w-14 h-14 rounded-xl overflow-hidden bg-pink-100 flex-shrink-0">
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1">
@@ -423,7 +423,7 @@ export default function AdminPage() {
             <h2 className="text-xl font-bold text-slate-800 mb-2">Delete Order?</h2>
             <p className="text-slate-500 text-sm mb-8">This action cannot be undone.</p>
             <div className="flex gap-4">
-              <button onClick={() => setConfirmDeleteId(null)} className="flex-1 px-6 py-3 rounded-full border border-slate-200 text-slate-600 font-medium hover:bg-slate-50 transition-colors">
+              <button onClick={() => setConfirmDeleteId(null)} className="flex-1 px-6 py-3 rounded-full border border-slate-200 text-slate-600 font-medium hover:bg-pink-50 transition-colors">
                 Cancel
               </button>
               <button onClick={() => { deleteOrder(confirmDeleteId); setConfirmDeleteId(null); }} className="flex-1 px-6 py-3 rounded-full bg-red-500 hover:bg-red-600 text-white font-medium transition-colors">
@@ -445,7 +445,7 @@ export default function AdminPage() {
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Product Image</label>
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-xl overflow-hidden bg-pink-100 flex-shrink-0">
                     <img src={newProduct.img} alt="Preview" className="w-full h-full object-cover" />
                   </div>
                   <input type="file" accept="image/*" onChange={handleImageChange} className="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-600 hover:file:bg-pink-100 transition-colors cursor-pointer" />

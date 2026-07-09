@@ -44,12 +44,12 @@ export default function CheckoutPage() {
 
   if (!cart.length && !submitted) {
     return (
-      <div className="max-w-7xl mx-auto px-8 py-20 text-center">
-        <div className="bg-white rounded-[3rem] p-16 shadow-sm border border-pink-50 max-w-lg mx-auto">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 text-center">
+        <div className="bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-sm border border-pink-50 max-w-lg mx-auto">
           <ShoppingBag className="w-10 h-10 text-pink-500 mx-auto mb-6" />
           <h2 className="text-2xl font-bold text-slate-800 mb-3">Nothing to checkout</h2>
           <p className="text-slate-500 mb-8">Add some bouquets to your cart first.</p>
-          <Link to="/shop" className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full font-medium transition-all">
+          <Link to="/shop" className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-medium transition-all">
             <ArrowLeft className="w-4 h-4" /> Browse Bouquets
           </Link>
         </div>
@@ -59,8 +59,8 @@ export default function CheckoutPage() {
 
   if (submitted) {
     return (
-      <div className="max-w-7xl mx-auto px-8 py-20 text-center">
-        <div className="bg-white rounded-[3rem] p-16 shadow-sm border border-pink-50 max-w-lg mx-auto">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 text-center">
+        <div className="bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-sm border border-pink-50 max-w-lg mx-auto">
           <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-green-500" />
           </div>
@@ -75,19 +75,19 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-12">
-      <div className="bg-white rounded-[3rem] p-12 mb-8 shadow-sm border border-pink-50">
-        <div className="inline-flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full mb-6">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-12">
+      <div className="bg-white rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 mb-6 lg:mb-8 shadow-sm border border-pink-50">
+        <div className="inline-flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full mb-4 lg:mb-6">
           <Heart className="w-4 h-4 text-pink-500" />
           <span className="text-sm text-pink-600 font-medium">{cartCount} items</span>
         </div>
-        <h1 className="text-4xl font-bold text-slate-800 mb-2">Checkout</h1>
-        <p className="text-slate-500">Fill in your details to complete the order.</p>
+        <h1 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-2">Checkout</h1>
+        <p className="text-slate-500 text-sm lg:text-base">Fill in your details to complete the order.</p>
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="flex gap-8">
-          <div className="flex-1 bg-white rounded-[2rem] p-10 shadow-sm border border-pink-50">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <div className="flex-1 bg-white rounded-[1.5rem] lg:rounded-[2rem] p-6 lg:p-10 shadow-sm border border-pink-50">
             <h2 className="text-xl font-bold text-slate-800 mb-8">Shipping Details</h2>
             <div className="space-y-5">
               <div>
@@ -109,8 +109,8 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          <div className="w-96">
-            <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-pink-50 sticky top-28">
+          <div className="w-full lg:w-96">
+            <div className="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-6 lg:p-8 shadow-sm border border-pink-50 sticky top-28">
               <h3 className="text-lg font-bold text-slate-800 mb-6">Order Summary</h3>
               <div className="space-y-4 mb-6">
                 {cart.map((item) => (

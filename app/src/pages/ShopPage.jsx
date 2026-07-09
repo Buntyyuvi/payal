@@ -16,15 +16,15 @@ export default function ShopPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-12">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-12">
       {/* Header */}
-      <div className="bg-white rounded-[3rem] p-12 mb-16 shadow-sm border border-pink-50">
+      <div className="bg-white rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 mb-10 lg:mb-16 shadow-sm border border-pink-50">
         <div className="inline-flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full mb-6">
           <Heart className="w-4 h-4 text-pink-500" />
           <span className="text-sm text-pink-600 font-medium">Handmade with love</span>
         </div>
-        <h1 className="text-4xl font-bold text-slate-800 mb-4">Shop All Bouquets</h1>
-        <p className="text-slate-500 text-lg max-w-2xl">
+        <h1 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-3 lg:mb-4">Shop All Bouquets</h1>
+        <p className="text-slate-500 text-base lg:text-lg max-w-2xl">
           Discover handcrafted floral bouquets designed to brighten birthdays, celebrations, and everyday moments with soft rose toned charm.
         </p>
       </div>
@@ -42,7 +42,7 @@ export default function ShopPage() {
               </span>
             </div>
             
-            <div className="grid grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               {catProducts.map((product, pIdx) => (
                 <div key={product.id || pIdx} className="bg-white p-4 rounded-[2rem] shadow-sm border border-pink-50 group hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="relative aspect-square rounded-[1.5rem] overflow-hidden mb-6 bg-pink-100 flex-shrink-0">

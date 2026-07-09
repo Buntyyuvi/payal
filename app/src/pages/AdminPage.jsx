@@ -172,13 +172,13 @@ export default function AdminPage() {
         <div /> {/* spacer */}
       </nav>
 
-      <div className="max-w-7xl mx-auto px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 lg:py-10">
         {activeTab === 'products' && (
           <>
             <div className="flex justify-between items-end mb-8">
               <div>
                 <p className="text-pink-500 font-bold text-xs tracking-widest uppercase mb-2">PRODUCT MANAGEMENT</p>
-                <h1 className="text-4xl font-bold text-slate-800 mb-2">Manage your flower collection</h1>
+                <h1 className="text-2xl lg:text-4xl font-bold text-slate-800 mb-2">Manage your flower collection</h1>
                 <p className="text-slate-500 text-sm">Add, edit, and organize products for the Pretty Flowers Studio storefront with a clean inventory workflow.</p>
               </div>
               <button onClick={handleAddNewClick} className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-all shadow-lg shadow-pink-200">
@@ -186,7 +186,7 @@ export default function AdminPage() {
               </button>
             </div>
 
-            <div className="grid grid-cols-4 gap-6 mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mb-10">
               <div className="bg-white p-6 rounded-3xl shadow-sm border border-pink-100 flex flex-col justify-between">
                 <div className="flex justify-between items-start mb-4">
                   <div className="bg-pink-50 p-2 rounded-full text-pink-500"><Package className="w-5 h-5" /></div>
@@ -303,7 +303,7 @@ export default function AdminPage() {
           <>
             <div className="mb-8">
               <p className="text-pink-500 font-bold text-xs tracking-widest uppercase mb-2">ORDER MANAGEMENT</p>
-              <h1 className="text-4xl font-bold text-slate-800 mb-2">Manage Orders</h1>
+                <h1 className="text-2xl lg:text-4xl font-bold text-slate-800 mb-2">Manage Orders</h1>
               <p className="text-slate-500 text-sm">View and manage customer orders placed through the storefront.</p>
             </div>
 
@@ -374,7 +374,7 @@ export default function AdminPage() {
                   </div>
                   <button onClick={() => setSelectedOrder(null)} className="text-slate-400 hover:text-slate-600"><X className="w-5 h-5" /></button>
                 </div>
-                <div className="grid grid-cols-2 gap-8 mb-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
                   <div>
                     <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Customer Details</p>
                     <div className="bg-pink-50 rounded-2xl p-5 space-y-2">

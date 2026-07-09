@@ -39,14 +39,14 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-pink-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-widest text-slate-800">PRETTY FLOWERS</h1>
-          <h2 className="text-2xl font-light tracking-[0.3em] text-slate-600">STUDIO</h2>
+      <div className="w-full max-w-md px-4">
+        <div className="text-center mb-6 lg:mb-8">
+          <h1 className="text-2xl lg:text-3xl font-bold tracking-widest text-slate-800">PRETTY FLOWERS</h1>
+          <h2 className="text-xl lg:text-2xl font-light tracking-[0.3em] text-slate-600">STUDIO</h2>
           <p className="text-pink-500 text-xs italic mt-1 font-serif">handmade with love</p>
         </div>
 
-        <div className="bg-white rounded-[2rem] shadow-lg border border-pink-100 p-8">
+        <div className="bg-white rounded-[2rem] shadow-lg border border-pink-100 p-6 lg:p-8">
           <div className="w-16 h-16 rounded-full bg-pink-50 flex items-center justify-center mx-auto mb-6">
             <Lock className="w-7 h-7 text-pink-500" />
           </div>

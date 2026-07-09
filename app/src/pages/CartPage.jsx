@@ -15,8 +15,8 @@ export default function CartPage() {
 
   if (cart.length === 0) {
     return (
-      <div className="max-w-7xl mx-auto px-8 py-20 text-center">
-        <div className="bg-white rounded-[3rem] p-16 shadow-sm border border-pink-50 max-w-lg mx-auto">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 text-center">
+          <div className="bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-sm border border-pink-50 max-w-lg mx-auto">
           <div className="bg-pink-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
             <ShoppingBag className="w-10 h-10 text-pink-500" />
           </div>
@@ -32,16 +32,16 @@ export default function CartPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-12">
-      <div className="bg-white rounded-[3rem] p-12 mb-8 shadow-sm border border-pink-50">
-        <div className="inline-flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full mb-6">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-12">
+      <div className="bg-white rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 mb-6 lg:mb-8 shadow-sm border border-pink-50">
+        <div className="inline-flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full mb-4 lg:mb-6">
           <Heart className="w-4 h-4 text-pink-500" />
           <span className="text-sm text-pink-600 font-medium">{cartCount} items in cart</span>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-4xl font-bold text-slate-800 mb-2">Your Cart</h1>
-            <p className="text-slate-500">Review and manage your selected bouquets before checkout.</p>
+            <h1 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-2">Your Cart</h1>
+            <p className="text-slate-500 text-sm lg:text-base">Review and manage your selected bouquets before checkout.</p>
           </div>
           <button onClick={clearCart} className="text-sm text-red-400 hover:text-red-600 font-medium flex items-center gap-1 transition-colors">
             <Trash2 className="w-4 h-4" />
@@ -50,13 +50,13 @@ export default function CartPage() {
         </div>
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
         <div className="flex-1 space-y-4">
           {cart.map((item) => {
             const itemPrice = parseInt(item.price.replace(/[^0-9]/g, ''));
             return (
-              <div key={item.id} className="bg-white rounded-[2rem] p-6 shadow-sm border border-pink-50 flex gap-6 items-center">
-                <div className="w-24 h-24 rounded-2xl overflow-hidden bg-pink-100 flex-shrink-0">
+              <div key={item.id} className="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-4 lg:p-6 shadow-sm border border-pink-50 flex gap-4 lg:gap-6 items-center">
+                <div className="w-16 h-16 lg:w-24 lg:h-24 rounded-xl lg:rounded-2xl overflow-hidden bg-pink-100 flex-shrink-0">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -81,8 +81,8 @@ export default function CartPage() {
           })}
         </div>
 
-        <div className="w-80">
-          <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-pink-50 sticky top-28">
+        <div className="w-full lg:w-80">
+          <div className="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-6 lg:p-8 shadow-sm border border-pink-50 sticky top-28">
             <h3 className="text-lg font-bold text-slate-800 mb-6">Order Summary</h3>
             <div className="space-y-3 mb-6">
               {cart.map((item) => {

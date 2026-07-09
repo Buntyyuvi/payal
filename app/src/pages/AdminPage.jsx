@@ -26,16 +26,44 @@ export default function AdminPage() {
   const handleOrderKeyDown = (e) => { if (e.key === 'Enter') handleOrderSearch(); };
 
   const fetchOrders = () => {
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(setOrders)
-      .catch(console.error);
+    const token = localStorage.getItem('adminToken');
+    const headers = {};
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    fetch(API_URL, { credentials: 'include', headers })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          setOrders(data);
+        } else if (data && Array.isArray(data.data)) {
+          setOrders(data.data);
+        } else if (data && Array.isArray(data.orders)) {
+          setOrders(data.orders);
+        } else {
+          setOrders([]);
+        }
+      })
+      .catch(err => {
+        console.error('Failed to fetch orders:', err);
+        setOrders([]);
+      });
   };
 
   const deleteOrder = async (id) => {
     setDeletingId(id);
     try {
-      await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+      const token = localStorage.getItem('adminToken');
+      const headers = {};
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
+      await fetch(`${API_URL}/${id}`, {
+        method: 'DELETE',
+        credentials: 'include',
+        headers
+      });
       fetchOrders();
       if (selectedOrder?.id === id) setSelectedOrder(null);
     } catch (error) {

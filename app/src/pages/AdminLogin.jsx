@@ -27,6 +27,7 @@ export default function AdminLogin() {
       const data = await res.json();
       if (data.success) {
         localStorage.setItem('adminAuth', 'true');
+        if (data.token) localStorage.setItem('adminToken', data.token);
         navigate('/admin');
       }
     } catch {

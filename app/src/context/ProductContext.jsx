@@ -11,7 +11,7 @@ export const ProductProvider = ({ children }) => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch(API_URL);
+      const response = await fetch(API_URL, { credentials: 'include' });
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -29,6 +29,7 @@ export const ProductProvider = ({ children }) => {
     try {
       const response = await fetch(API_URL, {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newProduct)
       });
@@ -43,6 +44,7 @@ export const ProductProvider = ({ children }) => {
     try {
       const response = await fetch(`${API_URL}/${id}`, {
         method: 'PUT',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedProduct)
       });
@@ -55,7 +57,7 @@ export const ProductProvider = ({ children }) => {
 
   const deleteProduct = async (id) => {
     try {
-      await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+      await fetch(`${API_URL}/${id}`, { method: 'DELETE', credentials: 'include' });
       setProducts(products.filter(p => p.id !== id));
     } catch (error) {
       console.error('Failed to delete product:', error);

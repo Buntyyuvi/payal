@@ -7,15 +7,23 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch products from backend
+  const toArray = (data) => {
+    if (Array.isArray(data)) return data;
+    if (data && Array.isArray(data.data)) return data.data;
+    if (data && Array.isArray(data.products)) return data.products;
+    return [];
+  };
+
   const fetchProducts = async () => {
     try {
       setLoading(true);
       const response = await fetch(API_URL, { credentials: 'include' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
-      setProducts(data);
+      setProducts(toArray(data));
     } catch (error) {
       console.error('Failed to fetch products:', error);
+      setProducts([]);
     } finally {
       setLoading(false);
     }
@@ -33,8 +41,9 @@ export const ProductProvider = ({ children }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newProduct)
       });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
-      setProducts([...products, data]);
+      setProducts(prev => Array.isArray(prev) ? [...prev, data] : [data]);
     } catch (error) {
       console.error('Failed to add product:', error);
     }
@@ -48,8 +57,9 @@ export const ProductProvider = ({ children }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedProduct)
       });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
-      setProducts(products.map(p => p.id === id ? data : p));
+      setProducts(prev => Array.isArray(prev) ? prev.map(p => p.id === id ? data : p) : []);
     } catch (error) {
       console.error('Failed to edit product:', error);
     }
@@ -57,8 +67,9 @@ export const ProductProvider = ({ children }) => {
 
   const deleteProduct = async (id) => {
     try {
-      await fetch(`${API_URL}/${id}`, { method: 'DELETE', credentials: 'include' });
-      setProducts(products.filter(p => p.id !== id));
+      const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE', credentials: 'include' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      setProducts(prev => Array.isArray(prev) ? prev.filter(p => p.id !== id) : []);
     } catch (error) {
       console.error('Failed to delete product:', error);
     }

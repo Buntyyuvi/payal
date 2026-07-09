@@ -17,7 +17,7 @@ export const ProductProvider = ({ children }) => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch(API_URL, { credentials: 'include' });
+      const response = await fetch(API_URL);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
       setProducts(toArray(data));
